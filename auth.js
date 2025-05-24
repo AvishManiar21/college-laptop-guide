@@ -2,19 +2,20 @@
 let auth0 = null;
 
 const config = {
-  domain: "dev-dahew75c5wgx2lvi.us.auth0.com",        // e.g., dev-xyz123.us.auth0.com
-  clientId: "DM3do1sICM0fzHKwTEjJJti393cRJG4h"    // e.g., xys123AbcDefGhijk
+  domain: "dev-dahew75c5wgx2lvi.us.auth0.com",
+  clientId: "DM3do1sICM0fzHKwTEjJJti393cRJG4h",
+  redirectUri: "https://avishmaniar21.github.io/college-laptop-guide/"
 };
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin,
+    redirect_uri: config.redirectUri,
   });
 };
 
 const logout = () => {
   auth0.logout({
-    returnTo: window.location.origin,
+    returnTo: config.redirectUri,
   });
 };
 
@@ -27,7 +28,7 @@ const initAuth0 = async () => {
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
     await auth0.handleRedirectCallback();
-    window.history.replaceState({}, document.title, "/");
+    window.history.replaceState({}, document.title, "/college-laptop-guide/");
   }
 
   const isAuthenticated = await auth0.isAuthenticated();
