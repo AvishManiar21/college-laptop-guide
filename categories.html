@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - College Laptop Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
+
+    </header>
+    <main>
+        <h2>Explore Laptops by Category</h2>
+        <section class="category-grid">
+            <!-- Programming Category -->
+            <article>
+                <h3><a href="programming.html">Programming</a></h3>
+                <p>High-performance laptops for coding, software development, and simulations.</p>
+            </article>
+            <!-- Graphic Design Category -->
+            <article>
+                <h3><a href="graphic-design.html">Graphic Design</a></h3>
+                <p>Powerful laptops with excellent displays and GPUs for creative professionals.</p>
+            </article>
+            <!-- Business Category -->
+            <article>
+                <h3><a href="business.html">Business</a></h3>
+                <p>Reliable laptops with excellent battery life and productivity features.</p>
+            </article>
+            <!-- General Use Category -->
+            <article>
+                <h3><a href="general.html">General Use</a></h3>
+                <p>Affordable and lightweight laptops for browsing, writing, and light multitasking.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 College Laptop Guide</p>
+    </footer>
+    <script>
+        // Dark Mode Toggle Logic
+        const toggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        // Check if user has previously enabled dark mode
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+    
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('dark-mode', 'disabled'); // Save preference
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('dark-mode', 'enabled'); // Save preference
+            }
+        });
+    </script>
+    
+</body>
+</html>

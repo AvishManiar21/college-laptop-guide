@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops for Programming</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            text-align: left;
+        }
+
+        .close {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            float: right;
+            margin-top: -10px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
+
+    </header>
+    <main>
+        <h2>Top Laptops for Programming</h2>
+        <section class="product-grid">
+            <!-- Dell XPS 15 -->
+            <article>
+                <img src="images/dell-xps-15.jpg" alt="Dell XPS 15">
+                <h3>Dell XPS 15</h3>
+                <p>Equipped with high-performance processors and ample RAM, the Dell XPS 15 is ideal for coding, software development, and running virtual machines.</p>
+                <a href="#modal1" class="button">View More</a>
+            </article>
+            <!-- MacBook Pro -->
+            <article>
+                <img src="images/Macbookpro.jpeg" alt="MacBook Pro">
+                <h3>Apple MacBook Pro</h3>
+                <p>Known for its powerful M-series chips and seamless integration with development tools, the MacBook Pro is favored by developers for its efficiency and reliability.</p>
+                <a href="#modal2" class="button">View More</a>
+            </article>
+        </section>
+    </main>
+
+    <!-- Dell XPS 15 Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h3>Dell XPS 15</h3>
+            <p>The Dell XPS 15 is a powerhouse laptop with Intel Core i7, 16GB RAM, and a 512GB SSD. It's perfect for developers who require top-tier performance for coding, simulations, and running virtual machines.</p>
+            <ul>
+                <li>Processor: Intel Core i7</li>
+                <li>Memory: 16GB RAM</li>
+                <li>Storage: 512GB SSD</li>
+                <li>Display: 15.6" FHD+</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MacBook Pro Modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h3>Apple MacBook Pro</h3>
+            <p>The MacBook Pro with M1 Pro chip is designed for developers. Its seamless integration with macOS and development tools like Xcode makes it a favorite among programmers worldwide.</p>
+            <ul>
+                <li>Processor: M1 Pro Chip</li>
+                <li>Memory: 16GB RAM</li>
+                <li>Storage: 512GB SSD</li>
+                <li>Display: 14-inch Retina</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Laptop Guide</p>
+    </footer>
+    <script>
+        // Dark Mode Toggle Logic
+        const toggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        // Check if user has previously enabled dark mode
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+    
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('dark-mode', 'disabled'); // Save preference
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('dark-mode', 'enabled'); // Save preference
+            }
+        });
+    </script>
+    
+</body>
+</html>

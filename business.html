@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops for Business</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            text-align: left;
+        }
+
+        .close {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            float: right;
+            margin-top: -10px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .button {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
+
+    </header>
+    <main>
+        <h2>Top Laptops for Business</h2>
+        <section class="product-grid">
+            <!-- Lenovo ThinkPad -->
+            <article>
+                <img src="images/lenovo-thinkpad.jpg" alt="Lenovo ThinkPad for Business">
+                <h3>Lenovo ThinkPad</h3>
+                <p>Highly reliable, long battery life, and designed for productivity on the go.</p>
+                <a href="#modal1" class="button">View More</a>
+            </article>
+            <!-- Microsoft Surface Laptop -->
+            <article>
+                <img src="images/Microsoft Surface Laptop.jpeg" alt="Microsoft Surface Laptop for Business">
+                <h3>Microsoft Surface Laptop</h3>
+                <p>Sleek and lightweight with excellent integration with Windows 11.</p>
+                <a href="#modal2" class="button">View More</a>
+            </article>
+        </section>
+    </main>
+
+    <!-- Lenovo ThinkPad Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h3>Lenovo ThinkPad</h3>
+            <p>The Lenovo ThinkPad X1 Carbon is known for its reliability, long battery life, and excellent keyboard. It's the perfect choice for business professionals who need productivity on the go.</p>
+            <ul>
+                <li>Processor: Intel Core i7</li>
+                <li>Memory: 16GB RAM</li>
+                <li>Storage: 512GB SSD</li>
+                <li>Battery Life: Up to 15 hours</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Microsoft Surface Laptop Modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h3>Microsoft Surface Laptop</h3>
+            <p>The Microsoft Surface Laptop offers seamless integration with Windows 11, a lightweight design, and a vibrant touchscreen display, making it ideal for multitasking and presentations.</p>
+            <ul>
+                <li>Processor: Intel Core i5</li>
+                <li>Memory: 8GB RAM</li>
+                <li>Storage: 256GB SSD</li>
+                <li>Display: 13.5-inch PixelSense Touchscreen</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Laptop Guide</p>
+    </footer>
+    <script>
+        // Dark Mode Toggle Logic
+        const toggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        // Check if user has previously enabled dark mode
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+    
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('dark-mode', 'disabled'); // Save preference
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('dark-mode', 'enabled'); // Save preference
+            }
+        });
+    </script>
+    
+</body>
+</html>

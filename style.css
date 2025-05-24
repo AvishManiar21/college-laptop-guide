@@ -1,0 +1,490 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* About Page Styling */
+main section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+main section h2,
+main section h3 {
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+main section p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+main section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+main section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Sign-In Form */
+.sign-in-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.sign-in-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sign-in-container input[type="text"],
+.sign-in-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sign-in-container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sign-in-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Confirmation Message */
+.confirmation {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.confirmation:target {
+    display: block;
+}
+
+.confirmation a {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.confirmation a:hover {
+    background-color: #0056b3;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: button-hover 0.3s ease-in-out;
+}
+
+
+button:focus,
+a:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@keyframes button-hover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button:hover {
+    animation: button-hover 0.3s ease-in-out;
+}
+
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-grid article {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-grid article img {
+    width: 100%; /* Uniform width */
+    height: 300px; /* Fixed height */
+    object-fit: contain; /* Crops to fit dimensions */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px;
+}
+
+.product-grid article h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-grid article p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.product-grid article .button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.product-grid article .button:hover {
+    background: #0056b3;
+}
+
+.product-grid article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-grid article {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-grid article img {
+    width: 100%; /* Uniform width */
+    height: 300px; /* Fixed height */
+    object-fit: contain; /* Crops to fit dimensions */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px;
+}
+
+.category-grid article h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.category-grid article p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.category-grid article a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.category-grid article a:hover {
+    background: #0056b3;
+}
+
+.category-grid article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1rem;
+    }
+
+    .product-grid article img,
+    .category-grid article img {
+        height: 120px; /* Adjusted height for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f9f9f9;
+}
+
+body.dark-mode header {
+    background-color: #1c1c1c;
+}
+
+body.dark-mode nav ul li a {
+    color: #f9f9f9;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #007BFF;
+}
+
+body.dark-mode .button {
+    background: #555;
+    color: #f9f9f9;
+}
+
+body.dark-mode .button:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+/* Dark Mode for Modals */
+body.dark-mode .modal-content {
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* Light text color */
+    border-color: #555555; /* Adjusted border color */
+}
+
+body.dark-mode .modal-content a.close {
+    color: #ffffff; /* Close button color */
+}
+
+body.dark-mode .modal-content a.close:hover {
+    color: #007BFF; /* Highlight close button on hover */
+}
+
+body.dark-mode .modal-content ul {
+    color: #ffffff; /* Ensure list items are visible */
+}
+
+/* Dark Mode for Sign-In Form */
+body.dark-mode form {
+    background-color: #1c1c1c; /* Dark background for the form */
+    border: 1px solid #444; /* Border for the form */
+    color: #f9f9f9; /* Text color for dark mode */
+}
+
+body.dark-mode form label {
+    color: #f9f9f9; /* Label text color */
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background-color: #333; /* Input and textarea background */
+    color: #f9f9f9; /* Input and textarea text color */
+    border: 1px solid #555; /* Border for inputs and textarea */
+}
+
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+    color: #aaa; /* Placeholder text color for better contrast */
+}
+
+body.dark-mode form button {
+    background: #555; /* Button background */
+    color: #f9f9f9; /* Button text color */
+}
+
+body.dark-mode form button:hover {
+    background: #007BFF; /* Button hover background */
+    color: #fff; /* Button hover text color */
+}
+

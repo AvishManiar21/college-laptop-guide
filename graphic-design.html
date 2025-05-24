@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops for Graphic Design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
+
+    </header>
+    <main>
+        <h2>Top Laptops for Graphic Design</h2>
+        <section class="product-grid">
+            <!-- MacBook Pro -->
+            <article>
+                <img src="images/3pUxSTtuvogfXsyJqoUCPf-1200-80.jpg.webp" alt="MacBook Pro for Graphic Design">
+                <h3>MacBook Pro</h3>
+                <p>Equipped with M1 Pro chip, 16-inch Retina Display, and 16GB RAM, perfect for design work.</p>
+                <button onclick="openModal('modal1')" class="button">View More</button>
+            </article>
+            <!-- Dell XPS 17 -->
+            <article>
+                <img src="images/dellxps17.jpeg" alt="Dell XPS 17 for Graphic Design">
+                <h3>Dell XPS 17</h3>
+                <p>Features a 17-inch 4K display, NVIDIA GeForce RTX GPU, and 32GB RAM for creative tasks.</p>
+                <button onclick="openModal('modal2')" class="button">View More</button>
+            </article>
+        </section>
+    </main>
+
+    <!-- MacBook Pro Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h3>MacBook Pro</h3>
+            <p>The MacBook Pro, equipped with the M1 Pro chip, offers unmatched performance for graphic design. With a 16-inch Retina Display, 16GB RAM, and long-lasting battery, it's the ultimate tool for creatives.</p>
+            <ul>
+                <li>Processor: M1 Pro Chip</li>
+                <li>Display: 16-inch Retina Display</li>
+                <li>Memory: 16GB RAM</li>
+                <li>Battery Life: Up to 20 hours</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dell XPS 17 Modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Dell XPS 17</h3>
+            <p>The Dell XPS 17 features a stunning 4K display, NVIDIA GeForce RTX GPU, and 32GB RAM, making it the ultimate machine for professional graphic designers.</p>
+            <ul>
+                <li>Processor: Intel Core i7</li>
+                <li>Display: 17-inch 4K UHD</li>
+                <li>Memory: 32GB RAM</li>
+                <li>Graphics: NVIDIA GeForce RTX</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Laptop Guide</p>
+    </footer>
+
+    <script>
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modal when clicking outside the modal content
+        window.onclick = function(event) {
+            const modal1 = document.getElementById("modal1");
+            const modal2 = document.getElementById("modal2");
+            if (event.target === modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target === modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        // Dark Mode Toggle Logic
+        const toggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        // Check if user has previously enabled dark mode
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+    
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('dark-mode', 'disabled'); // Save preference
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('dark-mode', 'enabled'); // Save preference
+            }
+        });
+    </script>
+    
+</body>
+</html>
