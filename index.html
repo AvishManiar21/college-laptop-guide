@@ -29,12 +29,18 @@
     </header>
 
     <main>
-        <h2>Welcome to College Laptop Guide</h2>
-        <p>
-            Explore our curated recommendations for programming, graphic design, business,
-            and general use laptops. Tailored to meet your academic needs!
-        </p>
-    </main>
+    <h2 id="welcome-heading">Welcome to College Laptop Guide</h2>
+    <p id="welcome-text">
+        Explore our curated recommendations for programming, graphic design, business,
+        and general use laptops. Tailored to meet your academic needs!
+    </p>
+    <div id="user-profile" style="display: none; margin-top: 20px;">
+        <img id="user-picture" style="border-radius: 50%; width: 100px;" />
+        <p><strong>Name:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+    </div>
+</main>
+
 
     <footer>
         <p>&copy; 2024 College Laptop Guide. All rights reserved.</p>
@@ -51,6 +57,8 @@
             localStorage.setItem('dark-mode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         });
     </script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
     <script src="auth.js"></script>
+    
 </body>
 </html>
