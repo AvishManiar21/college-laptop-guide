@@ -1,64 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Discover the best laptops tailored for your academic needs." />
-    <meta name="keywords" content="Laptops, Programming, Business, Graphic Design, Students" />
-    <meta name="author" content="College Laptop Guide" />
-    <title>College Laptop Guide</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the best laptops tailored for your academic needs." />
+  <meta name="keywords" content="Laptops, Programming, Business, Graphic Design, Students" />
+  <meta name="author" content="College Laptop Guide" />
+  <title>College Laptop Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
-        <button id="login" class="button">Log In</button>
-        <button id="logout" class="button" style="display: none;">Log Out</button>
-    </header>
+  <header>
+    <div class="logo">
+      <h1><span style="color: #007BFF;">College</span> Laptop Guide</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button>
+    <button id="login" class="button">Log In</button>
+    <button id="logout" class="button" style="display: none;">Log Out</button>
+  </header>
 
-    <main>
-    <h2 id="welcome-heading">Welcome to College Laptop Guide</h2>
-    <p id="welcome-text">
-        Explore our curated recommendations for programming, graphic design, business,
-        and general use laptops. Tailored to meet your academic needs!
-    </p>
-    <div id="user-profile" style="display: none; margin-top: 20px;">
-        <img id="user-picture" style="border-radius: 50%; width: 100px;" />
+  <main>
+    <div id="welcome-section" style="display:none; text-align:center;">
+      <h2>Welcome to College Laptop Guide</h2>
+      <p>Explore our curated recommendations for programming, graphic design, business, and general use laptops. Tailored to meet your academic needs!</p>
+      <div id="user-profile">
+        <img id="user-picture" style="border-radius: 50%; width: 80px;" />
         <p><strong>Name:</strong> <span id="user-name"></span></p>
         <p><strong>Email:</strong> <span id="user-email"></span></p>
+      </div>
     </div>
-</main>
+  </main>
 
+  <footer>
+    <p>&copy; 2024 College Laptop Guide. All rights reserved.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2024 College Laptop Guide. All rights reserved.</p>
-    </footer>
-
-    <script>
-        const toggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            body.classList.add('dark-mode');
-        }
-        toggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('dark-mode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-        });
-    </script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-    <script src="auth.js"></script>
-    
+  <script src="auth.js"></script>
 </body>
 </html>
