@@ -2,19 +2,19 @@ let auth0 = null;
 
 const config = {
   domain: "dev-dahew75c5wgx2lvi.us.auth0.com",
-  clientId: "DM3do1sICM0fzHKwTEjJJti393cRJG4h"
+  clientId: "DM3do1sICM0fzHKwTEjJJti393cRJG4h",
+  redirectUri: "https://college-laptop-guide.vercel.app/"
 };
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin,
-    connection: 'google-oauth2' // force Google login
+    redirect_uri: config.redirectUri
   });
 };
 
 const logout = () => {
   auth0.logout({
-    returnTo: window.location.origin
+    returnTo: config.redirectUri
   });
 };
 
@@ -36,12 +36,7 @@ const initAuth0 = async () => {
 
   if (isAuthenticated) {
     const user = await auth0.getUser();
-    document.getElementById("user-profile").style.display = "block";
-    document.getElementById("user-name").textContent = user.name;
-    document.getElementById("user-email").textContent = user.email;
-    document.getElementById("user-picture").src = user.picture;
-    document.getElementById("welcome-heading").textContent = `Welcome, ${user.name}!`;
-    document.getElementById("welcome-text").style.display = "none";
+    console.log("Logged in as", user.name);
   }
 };
 
