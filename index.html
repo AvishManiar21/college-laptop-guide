@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the best laptops tailored for your academic needs." />
-  <meta name="keywords" content="Laptops, Programming, Business, Graphic Design, Students" />
-  <meta name="author" content="College Laptop Guide" />
   <title>College Laptop Guide</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
@@ -28,15 +25,16 @@
     <button id="logout" class="button" style="display: none;">Log Out</button>
   </header>
 
-  <main>
-    <div id="welcome-section" style="display:none; text-align:center;">
-      <h2>Welcome to College Laptop Guide</h2>
-      <p>Explore our curated recommendations for programming, graphic design, business, and general use laptops. Tailored to meet your academic needs!</p>
-      <div id="user-profile">
-        <img id="user-picture" style="border-radius: 50%; width: 80px;" />
-        <p><strong>Name:</strong> <span id="user-name"></span></p>
-        <p><strong>Email:</strong> <span id="user-email"></span></p>
-      </div>
+  <main id="main-content" style="display: none;">
+    <h2 id="welcome-heading">Welcome to College Laptop Guide</h2>
+    <p>
+      Explore our curated recommendations for programming, graphic design, business,
+      and general use laptops. Tailored to meet your academic needs!
+    </p>
+    <div id="user-profile" style="margin-top: 20px;">
+      <img id="user-picture" style="border-radius: 50%; width: 100px;" />
+      <p><strong>Name:</strong> <span id="user-name"></span></p>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
     </div>
   </main>
 
@@ -45,5 +43,16 @@
   </footer>
 
   <script src="auth.js"></script>
+  <script>
+    const toggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+    });
+  </script>
 </body>
 </html>
