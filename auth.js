@@ -3,25 +3,25 @@ let auth0 = null;
 const config = {
   domain: "dev-dahew75c5wgx2lvi.us.auth0.com",
   clientId: "DM3do1sICM0fzHKwTEjJJti393cRJG4h",
-  redirectUri: "https://college-laptop-guide.vercel.app/"
+  redirectUri: "https://college-laptop-guide.vercel.app",
 };
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: config.redirectUri
+    redirect_uri: config.redirectUri,
   });
 };
 
 const logout = () => {
   auth0.logout({
-    returnTo: config.redirectUri
+    returnTo: config.redirectUri,
   });
 };
 
 const initAuth0 = async () => {
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId
+    client_id: config.clientId,
   });
 
   const query = window.location.search;
@@ -36,7 +36,7 @@ const initAuth0 = async () => {
 
   if (isAuthenticated) {
     const user = await auth0.getUser();
-    console.log("Logged in as", user.name);
+    console.log("Logged in as:", user.name);
   }
 };
 
